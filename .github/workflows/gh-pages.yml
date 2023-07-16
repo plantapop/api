@@ -26,7 +26,7 @@ jobs:
       - name: Generate HTML from OpenAPI spec
         run: redoc-cli bundle ./specs/openapi/openapi.yml -o ./docs/openapi.html
 
-      - name: Generating HTML from AsyncAPI document
+      - name: Generating HTML from AsyncAPI spec
         uses: docker://asyncapi/github-action-for-generator:2.0.0
         with:
           template: '@asyncapi/html-template@0.28.0'
