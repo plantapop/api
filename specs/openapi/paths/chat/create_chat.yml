@@ -1,0 +1,28 @@
+post:
+  tags:
+    - chats
+  security:
+    - bearerAuth: []
+  summary: Create a new chat
+  operationId: createChat
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/chat/Chat.yml'
+  responses:
+    '201':
+      description: Successfully created
+    '400':
+      description: Bad request due to invalid input parameters
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+    '401':
+      description: Authentication is required
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'

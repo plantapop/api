@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  member1:
+    type: string
+    format: uuid
+  member2:
+    type: string
+    format: uuid
+  createdAt:
+    type: string
+    format: date-time
