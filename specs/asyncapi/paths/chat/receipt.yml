@@ -1,0 +1,12 @@
+parameters:
+  id:
+    description: ID of the chat
+    schema:
+      type: string
+      pattern: '^[0-9a-fA-F]{24}$'
+publish:
+  operationId: sendReceipt
+  message:
+    summary: Send read receipts to a chat
+    payload:
+      $ref: '../../components/schemas/chat/Receipt.yml'

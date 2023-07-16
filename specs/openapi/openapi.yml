@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  version: 0.1.0
+  title: Rest API PlantaPop!
+
+tags:
+  - name: chats
+    description: Operations about chat
+
+paths:
+  # Chat:
+  '/chats':
+    $ref: 'paths/chat/create_chat.yml'
+  /chats/{id}:
+    $ref: 'paths/chat/manage_chat.yml'
+  /chats/notifications/{userId}:
+    $ref: 'paths/chat/get_notifications.yml'
+
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: 'components/securitySchemes/bearerAuth.yml'

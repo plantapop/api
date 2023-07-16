@@ -1,0 +1,74 @@
+get:
+  tags:
+    - chats
+  security:
+    - bearerAuth: []
+  summary: Get a specific chat
+  operationId: getChat
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: '^[0-9a-fA-F]{24}$'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/chat/Chat.yml'
+    '400':
+      description: Bad request due to invalid input parameters
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+    '401':
+      description: Authentication is required
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+    '404':
+      description: Chat not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+delete:
+  tags:
+    - chats
+  security:
+    - bearerAuth: []
+  summary: Delete a specific chat
+  operationId: deleteChat
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: '^[0-9a-fA-F]{24}$'
+  responses:
+    '204':
+      description: Successfully deleted
+    '400':
+      description: Bad request due to invalid input parameters
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+    '401':
+      description: Authentication is required
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'
+    '404':
+      description: Chat not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/error/GeneralError.yml'

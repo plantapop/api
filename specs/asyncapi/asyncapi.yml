@@ -1,0 +1,14 @@
+asyncapi: 2.6.0
+info:
+  title: Chat API
+  version: 1.0.0
+channels:
+  'chat/{id}':
+    $ref: '/paths/chat/chat.yml'
+  'chat/{id}/receipts':
+    $ref: '/paths/chat/receipt.yml'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: '/components/securitySchemes/bearerAuth.yml'
