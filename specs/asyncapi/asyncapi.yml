@@ -1,7 +1,7 @@
 asyncapi: 2.0.0
 info:
-  title: Chat API
-  version: 1.0.0
+  version: 0.1.0
+  title: Async API PlantaPop!
 channels:
   'chat/{id}':
     $ref: 'paths/chat/chat.yml'

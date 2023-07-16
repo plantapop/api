@@ -6,13 +6,17 @@ parameters:
       pattern: '^[0-9a-fA-F]{24}$'
 subscribe:
   operationId: onMessage
+  tags: ['Chat']
   message:
     summary: Receive messages from a chat
+    name: message
     payload:
       $ref: '../../components/schemas/chat/Message.yml'
 publish:
   operationId: sendMessage
+  tags: ['Chat']
   message:
     summary: Send messages to a chat
+    name: message
     payload:
       $ref: '../../components/schemas/chat/Message.yml'

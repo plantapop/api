@@ -6,7 +6,9 @@ parameters:
       pattern: '^[0-9a-fA-F]{24}$'
 publish:
   operationId: sendReceipt
+  tags: ['Chat']
   message:
     summary: Send read receipts to a chat
+    name: receipt
     payload:
       $ref: '../../components/schemas/chat/Receipt.yml'
