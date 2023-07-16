@@ -36,8 +36,7 @@ jobs:
 
       - name: Generate Index for GitHub Pages
         run: |
-          mv docs/asyncapi/index.html docs/asyncapi.html
-          rm -rf docs/asyncapi/
+          cp docs/asyncapi/index.html docs/asyncapi.html
           echo "<!DOCTYPE html>
           <html>
             <head>
