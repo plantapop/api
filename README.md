@@ -1,6 +1,11 @@
 # Plantapop API Definition
 
+
 ## OpenApi
-> TODO
+ 
+https://plantapop.github.io/api/openapi.html
+
+
 ## AsyncApi
-> TODO
+
+https://plantapop.github.io/api/asyncapi.html
