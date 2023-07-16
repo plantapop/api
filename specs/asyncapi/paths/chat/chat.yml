@@ -1,0 +1,18 @@
+parameters:
+  id:
+    description: ID of the chat
+    schema:
+      type: string
+      pattern: '^[0-9a-fA-F]{24}$'
+subscribe:
+  operationId: onMessage
+  message:
+    summary: Receive messages from a chat
+    payload:
+      $ref: '../../components/schemas/chat/Message.yml'
+publish:
+  operationId: sendMessage
+  message:
+    summary: Send messages to a chat
+    payload:
+      $ref: '../../components/schemas/chat/Message.yml'

@@ -1,0 +1,14 @@
+type: object
+properties:
+  messageId:
+    type: string
+    format: uuid
+  chatId:
+    type: string
+    format: uuid
+  recipient:
+    type: string
+    format: email
+  timestamp:
+    type: string
+    format: date-time

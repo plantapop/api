@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  chatId:
+    type: string
+    format: uuid
+  sender:
+    type: string
+    format: email
+  content:
+    type: string
+  timestamp:
+    type: string
+    format: date-time

@@ -20,13 +20,17 @@ jobs:
           node-version: 14
 
       - name: Install Redoc CLI
-        run: npm install -g redoc-cli
+        run: |
+          npm install -g redoc-cli
 
       - name: Generate HTML from OpenAPI spec
         run: redoc-cli bundle ./specs/openapi/openapi.yml -o ./docs/openapi.html
 
-      - name: Generate HTML from AsyncAPI spec
-        run: redoc-cli bundle ./specs/asyncapi/asyncapi.yml -o ./docs/asyncapi.html
+      - name: Generating HTML from AsyncAPI document
+        uses: docker://asyncapi/github-action-for-generator:2.0.0
+        with:
+          filepath: specs/asyncapi/asyncapi.yml
+          output: ./docs/asyncapi.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
