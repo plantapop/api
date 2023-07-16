@@ -32,11 +32,12 @@ jobs:
           template: '@asyncapi/html-template@0.19.0'
           parameters: singleFile=true
           filepath: specs/asyncapi/asyncapi.yml
-          output: ./docs/asyncapi.html
+          output: ./docs/asyncapi
 
-      - name: Generate index.html for GitHub Pages
-        # Adds lint to OpenApi and AsyncApi html that are located in same folder
+      - name: Generate Index for GitHub Pages
         run: |
+          mv docs/asyncapi/index.html docs/asyncapi.html
+          rm -rf docs/asyncapi/
           echo "<!DOCTYPE html>
           <html>
             <head>
